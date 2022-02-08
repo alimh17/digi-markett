@@ -1,0 +1,20 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Mizan";
+  src: url("../fotns/MizanAR+LT-Medium.woff");
+  src: url("../fotns/MizanAR+LT-Medium.woff2");
+  src: url("../fotns/MizanAR+LT-Regular.otf");
+  font-weight: 400;
+}
+
+body,
+html {
+  font-family: "Mizan", sans-serif !important;
+  direction: rtl;
+}

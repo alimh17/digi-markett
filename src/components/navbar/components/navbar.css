@@ -1,3 +1,68 @@
 .brand {
   font-family: "Ubuntu", sans-serif;
 }
+
+.show {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: #fff;
+  z-index: 10;
+  width: 80%;
+  transition: all 1s ease;
+  animation: show 1s linear;
+  display: flex;
+  border-left: 1px solid gray;
+  border-radius: 8px 0 0 8px;
+}
+
+@keyframes show {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateX(50%);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+    display: flex;
+  }
+}
+
+.hiden {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: #fff;
+  width: 80%;
+  transition: all 1s ease;
+  animation: hiden 1s linear;
+  opacity: 0;
+  display: flex;
+  z-index: -1;
+}
+
+@keyframes hiden {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateX(50%);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+    display: none;
+  }
+}

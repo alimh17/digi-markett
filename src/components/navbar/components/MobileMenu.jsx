@@ -3,9 +3,9 @@ import { FaTimes } from "react-icons/fa";
 
 import "./navbar.css";
 
-const MobileMenu = ({ hiden }) => {
+const MobileMenu = ({ show, hidden }) => {
   return (
-    <div className="absolute right-0 top-0 h-full bg-white z-10 w-full md:w-2/3">
+    <div className={`${show ? "show" : "hiden"}`}>
       <ul>
         <div className="w-full h-20 flex justify-center items-center">
           <h1 className="brand text-red-500 text-2xl">Digi Market</h1>
@@ -20,7 +20,7 @@ const MobileMenu = ({ hiden }) => {
       </ul>
       <FaTimes
         className="absolute m-5 top-0 left-0 text-xl text-red-500"
-        onClick={() => hiden(false)}
+        onClick={() => hidden(false)}
       />
     </div>
   );

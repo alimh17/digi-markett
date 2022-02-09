@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex flex-col border-b-2 md:h-32 items-center my-3">
-      {mobileMenu ? <MobileMenu hiden={setMobileMenu} /> : null}
+      <MobileMenu hidden={setMobileMenu} show={mobileMenu} />
       <NavbarUp show={setMobileMenu} />
       <NavbarDown />
     </nav>

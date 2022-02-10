@@ -13,6 +13,15 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "IranSans";
+  src: url("../fotns/iranSans/AIranianSans.ttf");
+  src: url("../fotns/iranSans/AIranianSans.woff");
+  src: url("../fotns/iranSans/AIranianSans.woff2");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;1,500&display=swap");
+
 body,
 html {
   font-family: "Mizan", sans-serif !important;

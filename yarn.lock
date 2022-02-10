@@ -1443,6 +1443,11 @@
   dependencies:
     "@splidejs/splide" "^3.6.12"
 
+"@splidejs/splide-extension-grid@^0.3.20":
+  version "0.3.20"
+  resolved "https://registry.yarnpkg.com/@splidejs/splide-extension-grid/-/splide-extension-grid-0.3.20.tgz#e834a0f418e4356588a5b17b92e8b61804b21e64"
+  integrity sha512-3DvhCqlc3B64/6Tr3NkqITIRjkM6p0tKdnJJCB1iHP3fMVAss3KmFeMPdEO2cyD00osSjU/8pkM6pVd5EJCwKA==
+
 "@splidejs/splide@^3.6.12":
   version "3.6.12"
   resolved "https://registry.yarnpkg.com/@splidejs/splide/-/splide-3.6.12.tgz#9b6bede5c99140fd06754990c91e474374566c30"

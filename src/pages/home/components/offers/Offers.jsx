@@ -3,6 +3,9 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { offersProduct } from "../../../../data/offers-products";
 import { RiArrowLeftSLine } from "react-icons/ri";
 import { FaArrowCircleLeft } from "react-icons/fa";
+import { replacePrice } from "../../../../utils/replacePrice";
+
+import "./Offers.css";
 
 const Offers = () => {
   return (
@@ -12,11 +15,10 @@ const Offers = () => {
         rewind: true,
         perPage: 6,
         perMove: 1,
-        // focus: "center",
-        // type: "loop",
         height: "25rem",
         direction: "rtl",
         width: "100%",
+        gap: 3,
         breakpoints: {
           640: {
             perPage: 2,
@@ -28,7 +30,6 @@ const Offers = () => {
 
           350: {
             perPage: 1,
-            type: "loop",
             arrows: false,
           },
         },
@@ -52,7 +53,10 @@ const Offers = () => {
           key={item.id}
           className="flex justify-center items-center  w-1/2 cursor-pointer"
         >
-          <div className="flex flex-col justify-center items-center w/50 h/80 mx-0.5 bg-white rounded-lg">
+          <div
+            style={{ height: "80%" }}
+            className="flex flex-col justify-center items-center w/50  mx-0.5 bg-white rounded-lg"
+          >
             <img
               src={item.url}
               alt=""
@@ -63,20 +67,21 @@ const Offers = () => {
               <span className="bg-red-600 rounded-full w-10 h-8 flex justify-center items-center text-white">
                 {item.off}
               </span>
-              <p>
-                {item.nowPrice} <sapn className="mx-2">تومان</sapn>
+              <p className="now-price">
+                {replacePrice(item.nowPrice)}{" "}
+                <span className="mx-2">تومان</span>
               </p>
             </div>
-            <span className="text-left w-full ml-28 line-through text-gray-400">
-              {item.beforePrice}
+            <span className="text-left w-full ml-28 line-through text-gray-400 before-price">
+              {replacePrice(item.beforePrice)}
             </span>
           </div>
         </SplideSlide>
       ))}
       <SplideSlide className="cursor-pointer flex justify-center items-center ">
         <div
-          className="flex flex-col justify-center items-center mx-0.5 bg-white rounded-lg"
-          style={{ width: "100%", height: "61%" }}
+          style={{ width: "100%", height: "80%" }}
+          className="flex flex-col justify-center items-center w/50  mx-0.5 bg-white rounded-lg"
         >
           <span className="flex text-white items-center my-3">
             <FaArrowCircleLeft className="mx-2 text-violet-800 text-6xl" />

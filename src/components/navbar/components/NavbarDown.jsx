@@ -1,5 +1,6 @@
 import React from "react";
 import { FaHotjar, FaInfo, FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NavbarDown = () => {
   return (
@@ -21,25 +22,25 @@ const NavbarDown = () => {
       <ul className="hidden md:flex w-full my-5 px-5 ">
         <div className="flex w-2/3">
           <li className="mx-1 lg:mx-3 py-3 text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duratin rounded-sm text-gray-400 px-3">
-            موبایل
+            <Link to="mobile">موبایل</Link>
           </li>
           <li className="mx-1 lg:mx-3 py-3 text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
-            لپ تاپ
+            <Link to="labtop">لپ تاپ</Link>
           </li>
           <li className="mx-1 lg:mx-3 py-3 text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
-            تبلت
+            <Link to="tablet">تبلت</Link>
           </li>
           <li className="mx-1 lg:mx-3 py-3 text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
-            کنسول بازی
+            <Link to="console">کنسول بازی</Link>
           </li>
           <li className="mx-1 lg:mx-3 py-3 text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
-            مودم
+            <Link to="modem">مودم</Link>
           </li>
           <li className="mx-1 lg:mx-3 py-3 text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
-            ساعت هوشمند
+            <Link to="smart-watch">ساعت هوشمند</Link>
           </li>
           <li className="mx-1 lg:mx-3 py-3 text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400">
-            لوازم جانبی
+            <Link to="tools">لوازم جانبی</Link>
           </li>
         </div>
         <div className="w-1/3 flex justify-end items-center text-gray-400 ">

@@ -6,7 +6,7 @@ const MainLayouts = (props) => {
   return (
     <div>
       <Navbar />
-      {props.childer}
+      {props.children}
       <Footer />
     </div>
   );

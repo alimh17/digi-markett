@@ -11,7 +11,7 @@
   z-index: 10;
   width: 80%;
   transition: all 1s ease;
-  animation: show 1s linear;
+  animation: show 0.2s linear;
   display: flex;
   border-left: 1px solid gray;
   border-radius: 8px 0 0 8px;
@@ -43,10 +43,10 @@
   background-color: #fff;
   width: 80%;
   transition: all 1s ease;
-  animation: hiden 1s linear;
+  animation: hiden 0.2s linear;
+  display: none;
   opacity: 0;
-  display: flex;
-  z-index: -1;
+  z-index: -2;
 }
 
 @keyframes hiden {
@@ -63,6 +63,5 @@
   100% {
     transform: translateX(100%);
     opacity: 0;
-    display: none;
   }
 }

@@ -1,21 +1,17 @@
 import React from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
 import store from "./store";
 
 import "./index.css";
-import MainLayouts from "./layouts/MainLayouts";
+import "swiper/css";
+import "swiper/css/bundle";
 
 render(
   <Provider store={store}>
-    <MainLayouts>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </MainLayouts>
+    <App />
   </Provider>,
   document.getElementById("root")
 );

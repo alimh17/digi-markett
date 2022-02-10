@@ -1,6 +1,7 @@
 import React from "react";
 import { BiCart } from "react-icons/bi";
 import { FaBars, FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 import "./navbar.css";
 
@@ -10,7 +11,7 @@ const NavbarUp = ({ show }) => {
       <li className="list-none flex w-full md:w-2/3 justify-between items-center md:justify-start">
         <FaBars className="md:hidden mx-3 text-lg" onClick={() => show(true)} />
         <h3 className="mx-5 text-2xl text-red-400 font-extrabold cursor-pointer brand">
-          Digi Market
+          <Link to="/">Digi Market</Link>
         </h3>
         <div className="w-1/2 hidden md:flex items-center">
           <FaSearch className="relative right-10 text-lg text-gray-400" />

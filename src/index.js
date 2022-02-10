@@ -8,6 +8,7 @@ import store from "./store";
 import "./index.css";
 import "swiper/css";
 import "swiper/css/bundle";
+import "@splidejs/splide/dist/css/splide.min.css";
 
 render(
   <Provider store={store}>

@@ -11,9 +11,11 @@ const MobileMenu = ({ show, hidden }) => {
   };
 
   return (
-    <div className={`${show ? "show" : "hiden"} `}>
+    <div
+      className={`${show ? "show" : "hiden"} bg-white h-full opacity-100 fixed`}
+    >
       <ul className="w-full">
-        <div className="w-full h-20 flex justify-center items-center">
+        <div className="w-full flex justify-center items-center py-10">
           <h1
             className="brand text-red-500 text-2xl"
             onClick={handleHiddenMenu}

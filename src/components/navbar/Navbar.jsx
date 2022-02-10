@@ -7,7 +7,7 @@ const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
-    <nav className="w-full flex flex-col border-b-2 md:h-32 items-center my-3">
+    <nav className="w-full flex flex-col border-b-2 md:h-32 items-center fixed top-0 p-3 z-10 bg-white">
       <MobileMenu hidden={setMobileMenu} show={mobileMenu} />
       <NavbarUp show={setMobileMenu} />
       <NavbarDown />

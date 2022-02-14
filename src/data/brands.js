@@ -50,7 +50,7 @@ export const brands = [
     url: process.env.PUBLIC_URL + "/images/brands/5643.png",
   },
   {
-    id: 10,
+    id: 11,
     name: "nokia",
     url: process.env.PUBLIC_URL + "/images/brands/4038.png",
   },

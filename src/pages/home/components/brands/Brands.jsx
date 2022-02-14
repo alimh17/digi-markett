@@ -7,7 +7,7 @@ import { brands } from "../../../../data/brands";
 
 const Brands = () => {
   return (
-    <div className="mx-5 flex flex-col my-3 h-52">
+    <div className="mx-5 flex flex-col my-10 ">
       <div className="flex justify-center md:justify-start">
         <h1 className="text-2xl mx-3">محبوب ترین برند ها</h1>
         <BiStar className="text-yellow-400 text-2xl" />

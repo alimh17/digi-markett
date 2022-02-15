@@ -1,0 +1,6 @@
+@media screen and (min-width: 768px) {
+  .article:hover {
+    transition: box-shadow 0.2s ease;
+    box-shadow: -5px 5px 5px gray, 5px 5px 5px gray;
+  }
+}

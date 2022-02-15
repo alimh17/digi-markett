@@ -21,25 +21,25 @@ const NavbarDown = () => {
       </ul>
       <ul className="hidden md:flex w-full my-5 px-5 ">
         <div className="flex w-2/3">
-          <li className="mx-1 lg:mx-3 py-3 text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duratin rounded-sm text-gray-400 px-3">
+          <li className="mx-1 lg:mx-3 py-3 text-sm lg:text-xl cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duratin rounded-sm text-gray-400 px-3">
             <Link to="mobile">موبایل</Link>
           </li>
-          <li className="mx-1 lg:mx-3 py-3 text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
+          <li className="mx-1 lg:mx-3 py-3 text-sm lg:text-xl cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
             <Link to="labtop">لپ تاپ</Link>
           </li>
-          <li className="mx-1 lg:mx-3 py-3 text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
+          <li className="mx-1 lg:mx-3 py-3 text-sm lg:text-xl cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
             <Link to="tablet">تبلت</Link>
           </li>
-          <li className="mx-1 lg:mx-3 py-3 text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
+          <li className="mx-1 lg:mx-3 py-3 text-sm lg:text-xl cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
             <Link to="console">کنسول بازی</Link>
           </li>
-          <li className="mx-1 lg:mx-3 py-3 text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
+          <li className="mx-1 lg:mx-3 py-3 text-sm lg:text-xl cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
             <Link to="modem">مودم</Link>
           </li>
-          <li className="mx-1 lg:mx-3 py-3 text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
+          <li className="mx-1 lg:mx-3 py-3 text-sm lg:text-xl cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
             <Link to="smart-watch">ساعت هوشمند</Link>
           </li>
-          <li className="mx-1 lg:mx-3 py-3 text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400">
+          <li className="mx-1 lg:mx-3 py-3 text-sm lg:text-xl cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400">
             <Link to="tools">لوازم جانبی</Link>
           </li>
         </div>

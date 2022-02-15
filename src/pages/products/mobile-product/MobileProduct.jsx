@@ -11,6 +11,7 @@ import MobileColor from "./components/MobileColor";
 import MobileColors from "./components/MobileColors";
 import MobileOptions from "./components/MobileOptions";
 import MobileSpecifications from "./components/MobileSpecifications";
+import MobileSimilar from "./components/MobileSimilar";
 
 import { colorList, colorObject } from "../../../utils/colorLists";
 import { switchColor } from "../../../utils/switchColor";
@@ -29,7 +30,6 @@ const MobileProduct = () => {
   useEffect(() => {
     const newproduct = mobile.filter((p) => p.id === toNumber(params.id));
     setProduct(newproduct);
-
     newproduct.map((item) => {
       return setColors(item.color);
     });
@@ -58,11 +58,12 @@ const MobileProduct = () => {
   };
 
   return (
-    <section>
-      <div className="md:hidden">
+    <section className="mobile-product">
+      <div className="">
         {product.map((item, index) => (
           <div key={item.id} className="my-3">
             <Splide
+              className="md:hidden"
               options={{
                 perMove: 1,
                 perPage: 1,
@@ -84,6 +85,7 @@ const MobileProduct = () => {
               <AiOutlineSafety className="text-2xl mx-3" />
               گارانتی {replaceNumberToPersian(18)} ماهه
             </div>
+            <MobileSimilar />
             <MobileOptions item={item} />
             <MobileSpecifications item={item} />
           </div>

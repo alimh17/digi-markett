@@ -1,3 +1,8 @@
+body {
+  direction: rtl !important;
+  font-family: "BYekan", sans-serif !important;
+}
+
 .options {
   list-style: none;
 }

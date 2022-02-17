@@ -1,16 +1,23 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BiSort } from "react-icons/bi";
 import { useDispatch } from "react-redux";
+import {
+  mobileSortByCheapest,
+  mobileSortByExpensive,
+  mobileSortBySell,
+  mobileSortByView,
+} from "../../../../actions/mobilesActions";
 import { orderingAction } from "../../../../actions/orderingAction";
 import { mobile } from "../../../../data/mobile";
 import { replaceNumberToPersian } from "../../../../utils/replacePrice";
 import { MobileContext } from "../../context/moibleContext";
 
 const Ordering = () => {
-  const dispatch = useDispatch();
   const [active, setActive] = useState([]);
 
   const context = useContext(MobileContext);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     let copyActive = new Array(5).fill(false);
@@ -45,7 +52,10 @@ const Ordering = () => {
             className={`${
               active[0] ? "active" : "deactive"
             } mx-3 p-2  cursor-pointer text-sm `}
-            onClick={(e) => handleActive(e)}
+            onClick={(e) => {
+              handleActive(e);
+              dispatch(mobileSortBySell());
+            }}
           >
             پرفروش ترین
           </li>
@@ -54,7 +64,10 @@ const Ordering = () => {
             className={`mx-3 p-2  cursor-pointer text-sm ${
               active[1] ? "active" : "text-black"
             }`}
-            onClick={(e) => handleActive(e)}
+            onClick={(e) => {
+              handleActive(e);
+              dispatch(mobileSortByView());
+            }}
           >
             پربازدید ترین
           </li>
@@ -72,7 +85,10 @@ const Ordering = () => {
             className={`mx-3 p-2  cursor-pointer text-sm ${
               active[3] ? "active" : "deactive"
             }`}
-            onClick={(e) => handleActive(e)}
+            onClick={(e) => {
+              handleActive(e);
+              dispatch(mobileSortByCheapest());
+            }}
           >
             ارزان ترین
           </li>
@@ -81,7 +97,10 @@ const Ordering = () => {
             className={`mx-3 p-2  cursor-pointer text-sm ${
               active[4] ? "active" : "deactive"
             }`}
-            onClick={(e) => handleActive(e)}
+            onClick={(e) => {
+              handleActive(e);
+              dispatch(mobileSortByExpensive());
+            }}
           >
             گران ترین
           </li>

@@ -1,4 +1,4 @@
-import { Fragment, useContext, useRef } from "react";
+import { Fragment, useContext, useEffect, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -8,6 +8,12 @@ import { FaTimes } from "react-icons/fa";
 
 import "./mobile-ordering.css";
 import { MobileContext } from "../../../context/moibleContext";
+import {
+  mobileSortByCheapest,
+  mobileSortByExpensive,
+  mobileSortBySell,
+  mobileSortByView,
+} from "../../../../../actions/mobilesActions";
 
 const MobileOrdering = () => {
   const ordering = useSelector((state) => state.ordering);
@@ -78,6 +84,7 @@ const MobileOrdering = () => {
                     onClick={(e) => {
                       context.setGrouping(e.target.textContent);
                       dispatch(hideOrdering());
+                      dispatch(mobileSortBySell());
                     }}
                   >
                     پرفروش ترین
@@ -87,6 +94,7 @@ const MobileOrdering = () => {
                     onClick={(e) => {
                       context.setGrouping(e.target.textContent);
                       dispatch(hideOrdering());
+                      dispatch(mobileSortByView());
                     }}
                   >
                     پر بازدید ترین
@@ -105,6 +113,7 @@ const MobileOrdering = () => {
                     onClick={(e) => {
                       context.setGrouping(e.target.textContent);
                       dispatch(hideOrdering());
+                      dispatch(mobileSortByCheapest());
                     }}
                   >
                     ارزان ترین
@@ -114,6 +123,7 @@ const MobileOrdering = () => {
                     onClick={(e) => {
                       context.setGrouping(e.target.textContent);
                       dispatch(hideOrdering());
+                      dispatch(mobileSortByExpensive());
                     }}
                   >
                     گران ترین

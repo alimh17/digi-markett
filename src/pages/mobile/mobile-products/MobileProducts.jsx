@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { setPorductAction } from "../../../actions/setProductAction";
 import { replaceNumberToPersian } from "../../../utils/replacePrice";
-import { mobile } from "../../../data/mobile";
 import Cards from "./components/Cards";
 
 import MobileCard from "./components/MobileCard";
@@ -14,6 +14,7 @@ import "./mobile-product.css";
 
 const MobileProducts = () => {
   const dispatch = useDispatch();
+  const mobile = useSelector((state) => state.mobiles);
 
   return (
     <section className={` w-full md:w-2/3`}>

@@ -1,14 +1,10 @@
-import React from "react";
-import { BiStar } from "react-icons/bi";
+import React, { useContext } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { setPorductAction } from "../../../actions/setProductAction";
 
+import { setPorductAction } from "../../../actions/setProductAction";
+import { replaceNumberToPersian } from "../../../utils/replacePrice";
 import { mobile } from "../../../data/mobile";
-import {
-  replaceNumberToPersian,
-  replacePrice,
-} from "../../../utils/replacePrice";
 import Cards from "./components/Cards";
 
 import MobileCard from "./components/MobileCard";
@@ -20,7 +16,7 @@ const MobileProducts = () => {
   const dispatch = useDispatch();
 
   return (
-    <section className="w-full md:w-2/3">
+    <section className={` w-full md:w-2/3`}>
       <Ordering />
       <section className="md:grid md:grid-cols-2 lg:grid-cols-3 md:mt-20 ">
         <div className="flex md:hidden w-full py-3 border-b justify-between">

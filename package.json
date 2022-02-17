@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^1.4.3",
     "@reduxjs/toolkit": "^1.7.2",
     "@splidejs/react-splide": "^0.6.20",
     "@splidejs/splide-extension-grid": "^0.3.20",

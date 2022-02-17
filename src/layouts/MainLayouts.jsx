@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 
 const MainLayouts = (props) => {
   const location = useLocation();
+
   const { pathname } = location;
 
   return (

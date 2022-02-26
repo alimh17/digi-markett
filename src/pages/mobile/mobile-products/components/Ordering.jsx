@@ -12,9 +12,7 @@ import { mobile } from "../../../../data/mobile";
 import { replaceNumberToPersian } from "../../../../utils/replacePrice";
 import { MobileContext } from "../../context/moibleContext";
 
-const Ordering = () => {
-  const [active, setActive] = useState([]);
-
+const Ordering = ({ active, setActive }) => {
   const context = useContext(MobileContext);
 
   const dispatch = useDispatch();
@@ -23,7 +21,7 @@ const Ordering = () => {
     let copyActive = new Array(5).fill(false);
     copyActive[1] = true;
     setActive(copyActive);
-  }, []);
+  }, [setActive]);
 
   const handleActive = (e) => {
     let copyActive = new Array(5).fill(false);
@@ -53,8 +51,8 @@ const Ordering = () => {
               active[0] ? "active" : "deactive"
             } mx-3 p-2  cursor-pointer text-sm `}
             onClick={(e) => {
-              handleActive(e);
               dispatch(mobileSortBySell());
+              handleActive(e);
             }}
           >
             پرفروش ترین

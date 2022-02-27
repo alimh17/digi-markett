@@ -27,7 +27,7 @@ const MobileMenu = ({ show, hidden }) => {
           className=" px-5 my-5 text-gray-400 flex justify-between w-full"
           onClick={handleHiddenMenu}
         >
-          <Link to="mobile" className="flex justify-between w-full text-xl">
+          <Link to="mobiles" className="flex justify-between w-full text-xl">
             موبایل
             <RiArrowLeftSLine />
           </Link>

@@ -18,6 +18,7 @@ import { switchColor } from "../../../utils/switchColor";
 import { replaceNumberToPersian } from "../../../utils/replacePrice";
 
 import "./mobile-product.css";
+import CartButton from "./components/CartButton";
 
 const MobileProduct = () => {
   const params = useParams();
@@ -88,6 +89,7 @@ const MobileProduct = () => {
             <MobileSimilar />
             <MobileOptions item={item} />
             <MobileSpecifications item={item} />
+            <CartButton item={item} />
           </div>
         ))}
       </div>

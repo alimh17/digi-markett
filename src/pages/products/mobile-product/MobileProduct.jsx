@@ -1,30 +1,41 @@
 import React, { useEffect, useState } from "react";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { toNumber } from "lodash";
-import { AiOutlineSafety } from "react-icons/ai";
 
 import { mobile } from "../../../data/mobile";
 
-import MobileTitle from "./components/MobileTitle";
-import MobileColor from "./components/MobileColor";
-import MobileColors from "./components/MobileColors";
-import MobileOptions from "./components/MobileOptions";
-import MobileSpecifications from "./components/MobileSpecifications";
-import MobileSimilar from "./components/MobileSimilar";
-
 import { colorList, colorObject } from "../../../utils/colorLists";
 import { switchColor } from "../../../utils/switchColor";
-import { replaceNumberToPersian } from "../../../utils/replacePrice";
 
 import "./mobile-product.css";
-import CartButton from "./components/CartButton";
+import MobileDevice from "./components/MobileDevice";
+import { BiInfoCircle, BiLike, BiStar } from "react-icons/bi";
+import { BsCoin } from "react-icons/bs";
+import {
+  replaceNumberToPersian,
+  replacePrice,
+} from "../../../utils/replacePrice";
+import { generateRandomNumber } from "../../../utils/generateRandomNumber";
+
+import MobileColors from "./components/MobileColors";
+import MobileColor from "./components/MobileColor";
+import MobileOptions from "./components/MobileOptions";
+import MobileSimilar from "./components/MobileSimilar";
+import { AiOutlineSafety, AiOutlineShop } from "react-icons/ai";
+// import CartButton from "./components/CartButton";
+import InnerImageZoom from "react-inner-image-zoom";
 
 const MobileProduct = () => {
   const params = useParams();
   const [product, setProduct] = useState([]);
   const [colors, setColors] = useState();
   const [color, setColor] = useState("مشکی");
+
+  const [feedback, setFeedback] = useState(Number);
+
+  useEffect(() => {
+    setFeedback(replaceNumberToPersian(generateRandomNumber()));
+  }, []);
 
   let productColor = [];
 
@@ -63,33 +74,14 @@ const MobileProduct = () => {
       <div className="">
         {product.map((item, index) => (
           <div key={item.id} className="my-3">
-            <Splide
-              className="md:hidden"
-              options={{
-                perMove: 1,
-                perPage: 1,
-                autoplay: true,
-                direction: "rtl",
-                type: "loop",
-              }}
-            >
-              {item.images.map((img, i) => (
-                <SplideSlide key={i} className="flex items-center">
-                  <img alt="" src={img} data-splide-lazy={img} />
-                </SplideSlide>
-              ))}
-            </Splide>
-            <MobileTitle item={item} />
-            <MobileColor item={item} color={color} />
-            <MobileColors colors={colors} click={handleColorState} />
-            <div className="flex items-center h-20 border-b">
-              <AiOutlineSafety className="text-2xl mx-3" />
-              گارانتی {replaceNumberToPersian(18)} ماهه
-            </div>
-            <MobileSimilar />
-            <MobileOptions item={item} />
-            <MobileSpecifications item={item} />
-            <CartButton item={item} />
+            <MobileDevice
+              item={item}
+              colors={colors}
+              color={color}
+              handle={handleColorState}
+              feedback={feedback}
+              setFeedback={setFeedback}
+            />
           </div>
         ))}
       </div>

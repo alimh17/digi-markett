@@ -19,7 +19,7 @@ const MobileProducts = () => {
   const mobile = useSelector((state) => state.mobiles);
 
   return (
-    <section className={` w-full md:w-2/3`}>
+    <section className={`w-full md:w-2/3`}>
       <Ordering active={active} setActive={setActive} />
       <section className="md:grid md:grid-cols-2 lg:grid-cols-3 md:mt-20 ">
         <div className="flex md:hidden w-full py-3 border-b justify-between">

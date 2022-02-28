@@ -10,6 +10,8 @@ import "swiper/css";
 import "swiper/css/bundle";
 import "@splidejs/splide/dist/css/splide.min.css";
 
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
+
 render(
   <Provider store={store}>
     <App />

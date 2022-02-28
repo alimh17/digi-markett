@@ -14,6 +14,6 @@ body {
 .options > li::before {
   content: "\2022";
   color: gray;
-  font-size: 30px !important;
+  font-size: 20px !important;
   margin: 0 5px;
 }

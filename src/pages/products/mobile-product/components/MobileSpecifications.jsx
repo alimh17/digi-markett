@@ -49,7 +49,7 @@ const MobileSpecifications = ({ item }) => {
           <li className="border-b  flex m-3 ">
             <ul className="flex flex-col items-start ">
               {item.Specifications.SpecialFeatures.map((item, index) => (
-                <li key={index} className="  my-2">
+                <li key={index} className="my-2">
                   {item}
                 </li>
               ))}

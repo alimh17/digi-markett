@@ -1,13 +1,17 @@
 import React from "react";
 import { BiArrowBack } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const EmptyModal = () => {
   return (
     <div className="flex flex-col justify-center items-center">
-      <span className="text-left w-full p-3 text-cyan-500 tex-sm flex items-center justify-end">
+      <Link
+        to="/cart"
+        className="text-left w-full p-3 text-cyan-500 tex-sm flex items-center justify-end"
+      >
         مشاهده سبد خرید
         <BiArrowBack className="mx-1" />
-      </span>
+      </Link>
       <img
         alt="empty_cart"
         style={{

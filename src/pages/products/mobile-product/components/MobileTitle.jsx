@@ -1,15 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BiLike, BiStar } from "react-icons/bi";
 import { replaceNumberToPersian } from "../../../../utils/replacePrice";
-import { generateRandomNumber } from "../../../../utils/generateRandomNumber";
 
-const MobileTitle = ({ item }) => {
-  const [feedback, setFeedback] = useState(Number);
-
-  useEffect(() => {
-    setFeedback(replaceNumberToPersian(generateRandomNumber()));
-  }, []);
-
+const MobileTitle = ({ item, feedback, setFeedback }) => {
   return (
     <div className="border-b">
       <div className="flex flex-col">

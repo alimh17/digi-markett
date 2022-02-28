@@ -34,7 +34,7 @@ const MobileSimilar = () => {
         {mobile.map((item) => (
           <SplideSlide key={item.id} className=" ">
             <img alt="" src={item.url} />
-            <h3 className="text-lg p-8 md:text-base ">{item.title}</h3>
+            <h3 className="text-lg p-8 md:text-xs ">{item.title}</h3>
           </SplideSlide>
         ))}
       </Splide>

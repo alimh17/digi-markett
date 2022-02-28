@@ -2,6 +2,7 @@ import React from "react";
 import { AiOutlineSafety } from "react-icons/ai";
 import { BiArrowBack, BiStar, BiStoreAlt, BiTrash } from "react-icons/bi";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { removeProductFromCartAction } from "../../../actions/cartActions";
 import {
   replaceNumberToPersian,
@@ -16,16 +17,24 @@ const FillModal = ({ cart }) => {
     <div className="flex flex-col ">
       <div className="flex justify-between">
         <p className="text-gray-500 m-3 text-sm w-12">{cart.length} کالا</p>
-        <p className="text-left w-full p-3 text-cyan-500 tex-sm flex items-center justify-end">
+        <Link
+          to="/cart"
+          className="text-left w-full p-3 text-cyan-500 tex-sm flex items-center justify-end"
+        >
           مشاهده سبد خرید
           <BiArrowBack className="mx-1" />
-        </p>
+        </Link>
       </div>
       <div className="overflow-y-scroll" style={{ height: "25rem" }}>
         {cart.map((item, index) => (
           <figure className="border-b flex p-3 " key={index}>
             <div className="w-1/3 h-full">
-              <img alt="product_img" src={process.env.PUBLIC_URL + item.url} />
+              <Link to={`/mobiles/${item.id}`}>
+                <img
+                  alt="product_img"
+                  src={process.env.PUBLIC_URL + item.url}
+                />
+              </Link>
               <ul className="flex w-full justify-around items-center py-3 border my-2 rounded-md">
                 <li className="text-rose-500">+</li>
                 <li>1 حداکثر</li>

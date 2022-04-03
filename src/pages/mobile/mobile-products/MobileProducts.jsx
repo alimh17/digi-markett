@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { showLoadingAction } from "../../../actions/loadingAction";
 
 import { setPorductAction } from "../../../actions/setProductAction";
 import { replaceNumberToPersian } from "../../../utils/replacePrice";
@@ -17,6 +18,7 @@ const MobileProducts = () => {
 
   const dispatch = useDispatch();
   const mobile = useSelector((state) => state.mobiles);
+  const navigate = useNavigate();
 
   return (
     <section className={`w-full md:w-2/3`}>
@@ -30,18 +32,21 @@ const MobileProducts = () => {
           </span>
         </div>
         {mobile.map((item, index) => (
-          <Link
-            to={`${item.id}`}
+          <div
             key={item.id}
             className=""
             onClick={(e) => {
               dispatch(setPorductAction(item));
+              dispatch(showLoadingAction());
+              setTimeout(() => {
+                navigate(`/mobiles/${item.id}`);
+              }, 1800);
               localStorage.setItem("product", JSON.stringify(item));
             }}
           >
             <MobileCard item={item} />
             <Cards item={item} />
-          </Link>
+          </div>
         ))}
       </section>
     </section>

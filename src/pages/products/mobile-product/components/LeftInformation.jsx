@@ -18,7 +18,7 @@ const LeftInformation = ({ item }) => {
         <p className="text-xs">دیجی مارکت</p>
         <p className="text-xs m-3">
           <span className="text-green-500">89.4%</span> درصد رضایت از کالا |
-          عملکرد <spna className="text-green-500">عالی</spna>
+          عملکرد <span className="text-green-500">عالی</span>
         </p>
       </span>
       <span className="flex items-center text-xs p-4 border-b">

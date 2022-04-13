@@ -64,15 +64,15 @@ const Offers = () => {
               style={{ width: "80%" }}
             />
             <div className="flex justify-around w-full items-center my-2">
-              <span className="bg-red-600 rounded-full w-10 h-8 flex justify-center items-center text-white">
+              <span className="bg-red-600 rounded-full p-1 flex justify-center items-center text-white text-xs md:text-xl">
                 {item.off}
               </span>
-              <p className="now-price">
+              <p className="now-price text-xs md:text-xl">
                 {replacePrice(item.nowPrice)}{" "}
-                <span className="mx-2">تومان</span>
+                <span className="mx-2 text-xs md:text-xl">تومان</span>
               </p>
             </div>
-            <span className="text-left w-full ml-28 line-through text-gray-400 before-price">
+            <span className="text-left w-full ml-28 line-through text-gray-400 before-price text-xs md:text-xl">
               {replacePrice(item.beforePrice)}
             </span>
           </div>

@@ -25,10 +25,10 @@ const BestSellingProduct = () => {
       <div className="border border-gray-400   rounded-lg">
         <div className="w-full flex justify-right md:justify-center items-center my-3">
           <FaHotjar className="text-orange-500 mx-3 text-xl md:text-3xl " />
-          <h1 className="text-xl md:text-3xl">پرفروش ترین کالاها</h1>
+          <h1 className="text-sm md:text-3xl">پرفروش ترین کالاها</h1>
           <Link
             to="best-selling"
-            className="absolute left-5 md:left-8 text-xl flex justify-center items-center text-sky-400"
+            className="absolute left-5 md:left-8 text-sm md:text-xl flex justify-center items-center text-sky-400"
           >
             مشاهده همه
             <RiArrowLeftSLine />
@@ -69,11 +69,11 @@ const BestSellingProduct = () => {
                         className="flex justify-start items-center border-b  w-full"
                         style={{ height: "8rem" }}
                       >
-                        <p className="mx-5 text-3xl text-sky-400 font-semibold">
+                        <p className="hidden md:flex mx-5 text-3xl text-sky-400 font-semibold">
                           {replaceNumberToPersian(p.id)}
                         </p>
-                        <p className="mx-3 text-xl title">
-                          {p.title.slice(0, 40)}...
+                        <p className="mx-3 text-sm  md:text-xl title">
+                          {p.title}
                         </p>
                       </div>
                     </div>

@@ -3,6 +3,7 @@ export const mobile = [
     id: 10004,
     sell: 3200,
     view: 4578,
+    brand: "apple",
     title:
       "گوشی موبایل اپل مدل iPhone 13 A2634 دو سیم‌ کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت",
     rate: "4.5",
@@ -43,6 +44,7 @@ export const mobile = [
     id: 10006,
     sell: 4001,
     view: 3989,
+    brand: "apple",
 
     title:
       "گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256 گیگابایت و رم 6 گیگابایت",
@@ -84,6 +86,7 @@ export const mobile = [
     id: 100010,
     sell: 4125,
     view: 3965,
+    brand: "apple",
 
     title:
       "گوشی موبایل اپل مدل iPhone 13 A2634 دو سیم‌ کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت - اکتیو",
@@ -125,6 +128,8 @@ export const mobile = [
     id: 10001,
     sell: 2458,
     view: 3211,
+    brand: "xiaomi",
+
     title:
       "گوشی موبایل شیائومی مدل POCO X3 Pro M2102J20SG دو سیم‌ کارت ظرفیت 256 گیگابایت و 8 گیگابایت رم",
     rate: "4.4",
@@ -165,6 +170,7 @@ export const mobile = [
     id: 10002,
     sell: 2433,
     view: 2487,
+    brand: "samsung",
 
     title:
       "گوشی موبایل سامسونگ مدل A52s 5G SM-A528B/DS دو سیم‌کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت",
@@ -205,6 +211,7 @@ export const mobile = [
     id: 10003,
     sell: 1101,
     view: 1477,
+    brand: "samsung",
 
     title:
       "گوشی موبایل سامسونگ مدل Galaxy A12 Nacho SM-A127F/DS دو سیم کارت ظرفیت 64 گیگابایت و رم 4 گیگابایت",
@@ -239,6 +246,7 @@ export const mobile = [
     id: 100010005,
     sell: 890,
     view: 1487,
+    brand: "xiaomi",
 
     title:
       "گوشی موبایل شیائومی مدل Redmi 9A M2006C3LG دو سیم‌ کارت ظرفیت 32 گیگابایت",
@@ -274,6 +282,7 @@ export const mobile = [
     id: 10007,
     sell: 2894,
     view: 2447,
+    brand: "xiaomi",
 
     title:
       "گوشی موبایل شیائومی مدل POCO F3 5G M2012K11AG دو سیم‌ کارت ظرفیت 256 گیگابایت و 8 گیگابایت رم",
@@ -313,6 +322,7 @@ export const mobile = [
     id: 10008,
     sell: 2955,
     view: 2177,
+    brand: "xiaomi",
 
     title:
       "گوشی موبایل شیائومی مدل Poco X3 GT دو سیم‌کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت",
@@ -353,6 +363,7 @@ export const mobile = [
     id: 10009,
     sell: 3265,
     view: 3847,
+    brand: "apple",
 
     title:
       "گوشی موبایل اپل مدل iPhone 11 A2223 دو سیم‌ کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت",
@@ -394,6 +405,7 @@ export const mobile = [
     id: 100011,
     sell: 3248,
     view: 2574,
+    brand: "apple",
 
     title: "گوشی موبایل اپل مدل iPhone SE 2020 A2275 ظرفیت 128 گیگابایت",
     rate: "4.2",
@@ -426,6 +438,7 @@ export const mobile = [
     id: 100012,
     sell: 1487,
     view: 1798,
+    brand: "samsung",
 
     title:
       "گوشی موبایل سامسونگ مدل Galaxy A32 SM-A325F/DS دو سیم‌کارت ظرفیت 128 گیگابایت و رم 6 گیگابایت",
@@ -460,6 +473,7 @@ export const mobile = [
     id: 100013,
     sell: 2475,
     view: 1109,
+    brand: "samsung",
 
     title:
       "گوشی موبایل سامسونگ مدل Galaxy A22 SM-A225F/DSN دو سیم کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت",
@@ -495,6 +509,7 @@ export const mobile = [
     id: 100014,
     sell: 2751,
     view: 2899,
+    brand: "samsung",
 
     title:
       "گوشی موبایل سامسونگ مدل A52s 5G SM-A528B/DS دو سیم کارت ظرفیت 128 گیگابایت و رم 8 گیگابایت",

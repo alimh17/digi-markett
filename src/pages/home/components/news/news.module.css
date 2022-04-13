@@ -1,0 +1,9 @@
+/* .swiper_news {
+  height: 100% !important ;
+} */
+
+@media screen and (max-width: 768px) {
+  .swiper_news {
+    height: 100% !important ;
+  }
+}

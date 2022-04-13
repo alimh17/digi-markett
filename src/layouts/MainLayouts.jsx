@@ -4,6 +4,7 @@ import Footer from "../components/footer/Footer";
 import Loading from "../components/loading/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { hideLoadingAction } from "../actions/loadingAction";
+import Wave from "./components/Wave";
 
 const MainLayouts = (props) => {
   const loading = useSelector((state) => state.loading);
@@ -26,6 +27,7 @@ const MainLayouts = (props) => {
       ) : (
         ""
       )}
+      <Wave />
       <Footer />
     </div>
   );

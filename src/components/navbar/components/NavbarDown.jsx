@@ -2,6 +2,8 @@ import React from "react";
 import { FaHotjar, FaInfo, FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+import "./navbar.css";
+
 const NavbarDown = () => {
   return (
     <>
@@ -21,12 +23,14 @@ const NavbarDown = () => {
       </ul>
       <ul className="hidden md:flex w-full my-5 px-5 ">
         <div className="flex w-2/3">
-          <li className="mx-1 lg:mx-3 py-3 text-sm lg:text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duratin rounded-sm text-gray-400 px-3">
+          <li className="mx-1 lg:mx-3 py-3 text-sm lg:text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duratin rounded-sm text-gray-400 px-3 mobile">
             <Link to="mobiles">موبایل</Link>
           </li>
-          <li className="mx-1 lg:mx-3 py-3 text-sm lg:text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
+          {/* <p className="text">sdkfasld;f</p> */}
+          <li className="mx-1 lg:mx-3 py-3 text-sm lg:text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3 laptop">
             <Link to="labtop">لپ تاپ</Link>
           </li>
+          {/* <p className="text_2">text</p> */}
           <li className="mx-1 lg:mx-3 py-3 text-sm lg:text-lg cursor-pointer hover:border-b-red-400 hover:border-b-2 transition-all duration-75 rounded-sm text-gray-400 px-3">
             <Link to="tablet">تبلت</Link>
           </li>

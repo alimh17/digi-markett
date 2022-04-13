@@ -1,19 +1,18 @@
 import React from "react";
-import Form from "./components/Form";
-import Social from "./components/Social";
-import Support from "./components/Support";
+import Application from "./components/application/Application";
+import SocialContact from "./components/social_contact/SocialContact";
+import WayContact from "./components/way_contact/WayContact";
+
+//styleSheet
+import style from "./footer.module.css";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col">
-      <Support />
-      <Social />
-      <Form />
-      <span className="w-full text-center">
-        تمامی مطالب بر گرفته از سایت دیجی کالا میباشد و هیچ گونه هدف تجاری وجود
-        ندارد
-      </span>
-    </div>
+    <footer className="flex flex-col md:grid grid-rows-3 grid-cols-3  -mt-1 md:h-96">
+      <Application style={style} />
+      <WayContact />
+      <SocialContact />
+    </footer>
   );
 };
 

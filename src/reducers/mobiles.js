@@ -8,6 +8,8 @@ export const mobilesReducer = (state = [], action) => {
       return action.payload;
     case "SORT_BY_CHEAPEST":
       return action.payload;
+    case "SORT_BY_BRANDS":
+      return action.payload;
     default:
       return state;
   }

@@ -64,3 +64,11 @@
     opacity: 0;
   }
 }
+
+.mobile:hover + .text {
+  display: none;
+}
+
+.laptop:hover + .text_2 {
+  display: none;
+}

@@ -12,12 +12,19 @@ const Mobile = () => {
   };
 
   return (
-    <div className={`md:mt-32 flex`}>
-      <MobileContext.Provider value={{ grouping, setGrouping: handleGroupin }}>
-        <MobileSidebar />
-        <MobileProducts />
-        <MobileOrdering />
-      </MobileContext.Provider>
+    <div className={`md:mt-32 flex flex-col w-full`}>
+      <div className="w-full px-10 text-xl">
+        <h3 className=" my-4">دیجی مارکت / موبایل</h3>
+      </div>
+      <div className="w-full flex">
+        <MobileContext.Provider
+          value={{ grouping, setGrouping: handleGroupin }}
+        >
+          <MobileSidebar />
+          <MobileProducts />
+          <MobileOrdering />
+        </MobileContext.Provider>
+      </div>
     </div>
   );
 };

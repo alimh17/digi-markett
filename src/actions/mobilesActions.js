@@ -66,3 +66,20 @@ export const mobileSortByExpensive = () => (dispatch) => {
 
   dispatch({ type: "SORT_BY_EXPENSIVE", payload: sorted });
 };
+
+export const mobilesSortByBrands = (brand) => (dispatch) => {
+  const brands = [];
+
+  if (brand.length === 0) {
+    dispatch({ type: "INIT_MOBILE", payload: mobile });
+  } else {
+    mobile.map((m, i) => {
+      brand.map((b) => {
+        if (m.brand === b.toLowerCase()) {
+          brands.push(m);
+        }
+      });
+    });
+    dispatch({ type: "SORT_BY_BRANDS", payload: brands });
+  }
+};

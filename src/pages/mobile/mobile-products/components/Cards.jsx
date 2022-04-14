@@ -18,17 +18,17 @@ const Cards = ({ item }) => {
         />
       </div>
       <div className="w-2/3 mx-3 flex flex-col justify-start items-center md:w-full">
-        <p className="p-3 w-full text-sm h-24">{item.title}</p>
+        <p className="p-3 w-full text-sm h-24 md:text-lg">{item.title}</p>
         <div className="w-full text-left p-3 flex items-center justify-between">
-          <p className="text-gray-400">موجود در انبار</p>
-          <span className="flex items-center">
+          <p className="text-gray-400 md:text-xl">موجود در انبار</p>
+          <span className="flex items-center md:text-2xl">
             {item.rate}
             <BiStar className="mx-2 text-yellow-500" />
           </span>
         </div>
-        <span className="w-full text-left p-3 py-3  ">
-          {replacePrice(item.price)} تومان
-        </span>
+        <div className="w-full text-left p-3 py-3  md:text-xl">
+          {replacePrice(item.price)} <span className="mx-2">تومان</span>
+        </div>
       </div>
     </article>
   );

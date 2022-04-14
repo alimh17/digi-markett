@@ -1,10 +1,13 @@
 import { mobile } from "../data/mobile";
+import _ from "lodash";
 
 export const mobileInit = () => (dispatch) => {
   dispatch({ type: "INIT_MOBILE", payload: mobile });
 };
 
-export const mobileSortBySell = () => (dispatch) => {
+export const mobileSortBySell = () => (dispatch, getState) => {
+  const state = getState().productSort;
+
   const compare = (a, b) => {
     if (b.sell < a.sell) {
       return -1;
@@ -16,11 +19,27 @@ export const mobileSortBySell = () => (dispatch) => {
   };
 
   const sorted = mobile.sort(compare);
-
-  dispatch({ type: "SORT_BY_SELL", payload: sorted });
+  if (_.isEmpty(state)) {
+    dispatch({ type: "SORT_BY_SELL", payload: sorted });
+  } else {
+    const brands = [];
+    sorted.map((m, i) => {
+      state.mobiles.brand.map((b) => {
+        if (m.brand === b.toLowerCase()) {
+          brands.push(m);
+        }
+      });
+    });
+    dispatch({ type: "SORT_BY_BRANDS", payload: brands });
+    if (state.mobiles.brand.length === 0) {
+      dispatch({ type: "SORT_BY_SELL", payload: sorted });
+    }
+  }
 };
 
-export const mobileSortByView = () => (dispatch) => {
+export const mobileSortByView = () => (dispatch, getState) => {
+  const state = getState().productSort;
+
   const compare = (a, b) => {
     if (b.view < a.view) {
       return -1;
@@ -33,10 +52,27 @@ export const mobileSortByView = () => (dispatch) => {
 
   const sorted = mobile.sort(compare);
 
-  dispatch({ type: "SORT_BY_VIEW", payload: sorted });
+  if (_.isEmpty(state)) {
+    dispatch({ type: "SORT_BY_SELL", payload: sorted });
+  } else {
+    const brands = [];
+    sorted.map((m, i) => {
+      state.mobiles.brand.map((b) => {
+        if (m.brand === b.toLowerCase()) {
+          brands.push(m);
+        }
+      });
+    });
+    dispatch({ type: "SORT_BY_BRANDS", payload: brands });
+    if (state.mobiles.brand.length === 0) {
+      dispatch({ type: "SORT_BY_SELL", payload: sorted });
+    }
+  }
 };
 
-export const mobileSortByCheapest = () => (dispatch) => {
+export const mobileSortByCheapest = () => (dispatch, getState) => {
+  const state = getState().productSort;
+
   const compare = (a, b) => {
     if (Number(a.price) < Number(b.price)) {
       return -1;
@@ -49,9 +85,26 @@ export const mobileSortByCheapest = () => (dispatch) => {
 
   const sorted = mobile.sort(compare);
 
-  dispatch({ type: "SORT_BY_CHEAPEST", payload: sorted });
+  if (_.isEmpty(state)) {
+    dispatch({ type: "SORT_BY_SELL", payload: sorted });
+  } else {
+    const brands = [];
+    sorted.map((m, i) => {
+      state.mobiles.brand.map((b) => {
+        if (m.brand === b.toLowerCase()) {
+          brands.push(m);
+        }
+      });
+    });
+    dispatch({ type: "SORT_BY_BRANDS", payload: brands });
+    if (state.mobiles.brand.length === 0) {
+      dispatch({ type: "SORT_BY_SELL", payload: sorted });
+    }
+  }
 };
-export const mobileSortByExpensive = () => (dispatch) => {
+export const mobileSortByExpensive = () => (dispatch, getState) => {
+  const state = getState().productSort;
+
   const compare = (a, b) => {
     if (Number(b.price) < Number(a.price)) {
       return -1;
@@ -64,11 +117,30 @@ export const mobileSortByExpensive = () => (dispatch) => {
 
   const sorted = mobile.sort(compare);
 
-  dispatch({ type: "SORT_BY_EXPENSIVE", payload: sorted });
+  if (_.isEmpty(state)) {
+    dispatch({ type: "SORT_BY_SELL", payload: sorted });
+  } else {
+    const brands = [];
+    sorted.map((m, i) => {
+      state.mobiles.brand.map((b) => {
+        if (m.brand === b.toLowerCase()) {
+          brands.push(m);
+        }
+      });
+    });
+    dispatch({ type: "SORT_BY_BRANDS", payload: brands });
+    if (state.mobiles.brand.length === 0) {
+      dispatch({ type: "SORT_BY_SELL", payload: sorted });
+    }
+  }
 };
 
-export const mobilesSortByBrands = (brand) => (dispatch) => {
+
+// --------------------------------------------------------------------------
+
+export const mobilesSortByBrands = (brand) => (dispatch, getState) => {
   const brands = [];
+  const state = getState().productSort;
 
   if (brand.length === 0) {
     dispatch({ type: "INIT_MOBILE", payload: mobile });

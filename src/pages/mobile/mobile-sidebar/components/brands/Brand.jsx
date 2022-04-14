@@ -1,27 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { BsChevronUp } from "react-icons/bs";
+import _ from "lodash";
 import AllBrands from "./components/AllBrands";
 import { FaSearch } from "react-icons/fa";
 import { brandConvertToPersian } from "../../../../../utils/brnadConverToPersian";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { mobilesSortByBrands } from "../../../../../actions/mobilesActions";
 
 const Brand = () => {
   const [showBrand, setShowBrand] = useState(false);
-  const [selectedBrand, setSelectedBrand] = useState([]);
 
   const dispatch = useDispatch();
+  const selectedBrand = useSelector((state) => state.productSort);
 
   const handleBrandToggle = () => {
     setShowBrand(!showBrand);
   };
 
-  
   useEffect(() => {
-    dispatch(mobilesSortByBrands(selectedBrand));
-
+    dispatch(
+      mobilesSortByBrands(
+        _.isEmpty(selectedBrand) ? [] : selectedBrand.mobiles.brand
+      )
+    );
   }, [selectedBrand, showBrand]);
-
 
   return (
     <section className=" py-5 border-b">
@@ -30,13 +32,14 @@ const Brand = () => {
         onClick={() => handleBrandToggle()}
       >
         <h2 className="mx-5 text-xl">برند</h2>
-        {selectedBrand.length > 0 && (
+        {!_.isEmpty(selectedBrand) &&
+        selectedBrand.mobiles.brand.length !== 0 ? (
           <span
             className={`w-2 h-2 rounded-full bg-sky-300 relative right-56 ${
               showBrand && "hidden"
             }`}
           ></span>
-        )}
+        ) : null}
         <BsChevronUp
           className={`mx-5 text-xl transition-all ease-linear duration-150 ${
             showBrand && "rotate-180"
@@ -54,20 +57,16 @@ const Brand = () => {
         />
         <FaSearch className="absolute left-3/4 text-2xl" />
       </div>
-      {selectedBrand && (
+      {!_.isEmpty(selectedBrand) ? (
         <ul className={`${!showBrand && "hidden"} flex`}>
-          {selectedBrand.map((brand, index) => (
+          {selectedBrand.mobiles.brand.map((brand, index) => (
             <li key={index} className="p-3 border-2 my-1 rounded-lg mx-2">
               {brandConvertToPersian(brand)}
             </li>
           ))}
         </ul>
-      )}
-      <AllBrands
-        show={showBrand}
-        selectedBrand={selectedBrand}
-        setSelectedBrand={setSelectedBrand}
-      />
+      ) : null}
+      <AllBrands show={showBrand} />
     </section>
   );
 };

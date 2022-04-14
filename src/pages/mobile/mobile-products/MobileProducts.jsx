@@ -31,10 +31,9 @@ const MobileProducts = () => {
             <p className="mx-2 ">کالا</p>
           </span>
         </div>
-        {mobile.map((item, index) => (
+        {mobile.map((item) => (
           <div
             key={item.id}
-            className=""
             onClick={(e) => {
               dispatch(setPorductAction(item));
               dispatch(showLoadingAction());

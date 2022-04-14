@@ -1,39 +1,38 @@
-import React, { createRef, useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
-import { mobilesSortByBrands } from "../../../../../../actions/mobilesActions";
+import React, { createRef, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { TiTick } from "react-icons/ti";
+import _ from "lodash";
 
+import { sortMobilesByBrand } from "../../../../../../actions/sortProduct";
 import { mobileBrnads } from "../../../../../../data/mobileBrnads";
 import { brandConvertToPersian } from "../../../../../../utils/brnadConverToPersian";
+import { brandSort, changeCheckbox } from "../utils/checkboxAndSort";
 
-const AllBrands = ({ show, selectedBrand, setSelectedBrand }) => {
+//styleSheet
+import style from "./allBrands.module.css";
+
+const AllBrands = ({ show }) => {
   const brandRef = useRef([]);
   const dispatch = useDispatch();
-
+  const brandMobiles = useSelector((state) => state.productSort);
 
   brandRef.current = mobileBrnads.map(
     (_, i) => brandRef.current[i] ?? createRef()
   );
 
-
   const handleCheckbox = (e, item) => {
-    const copySelectedBrand = [...selectedBrand];
-    copySelectedBrand.push(item.name);
-    setSelectedBrand(copySelectedBrand);
+    const getResultBrandSort = brandSort(brandMobiles, item);
+    dispatch(sortMobilesByBrand(getResultBrandSort));
 
-    if (selectedBrand && selectedBrand.includes(item.name)) {
-      const filter = copySelectedBrand.filter((f) => f !== item.name);
-      setSelectedBrand(filter);
+    if (
+      !_.isEmpty(brandMobiles) &&
+      brandMobiles.mobiles.brand.includes(item.name)
+    ) {
+      const filter = brandMobiles.mobiles.brand.filter((f) => f !== item.name);
+      dispatch(sortMobilesByBrand(filter));
     }
 
-    if (brandRef) {
-      brandRef.current.map((el, i) => {
-        if (el.current.classList.contains(item.name)) {
-          el.current.checked
-            ? (el.current.checked = false)
-            : (el.current.checked = true);
-        }
-      });
-    }
+    changeCheckbox(brandRef, item);
   };
 
   return (
@@ -48,7 +47,14 @@ const AllBrands = ({ show, selectedBrand, setSelectedBrand }) => {
             <span className=" p-3 flex items-center">
               <input
                 type="checkbox"
-                className={`w-5 h-5 rounded-lg  ${item.name}`}
+                className={`w-5 h-5 rounded-lg  ${item.name} checked:bg-slate-400 ${style.checkbox}`}
+                defaultChecked={
+                  !_.isEmpty(brandMobiles) &&
+                  brandMobiles.mobiles.brand !== 0 &&
+                  brandMobiles.mobiles.brand.includes(item.name)
+                    ? "checked"
+                    : null
+                }
                 ref={brandRef.current[index]}
                 onClick={(e) =>
                   e.target.checked
@@ -56,10 +62,14 @@ const AllBrands = ({ show, selectedBrand, setSelectedBrand }) => {
                     : (e.target.checked = true)
                 }
               />
-              <h2 className="mx-3">{item.name}</h2>
+              <TiTick className={` ${style.tick} text-4xl`} />
+              <span className={`${style.replace}`}></span>
+              <h2 className="p-3 md:text-2xl text-gray-500">
+                {brandConvertToPersian(item.name)}
+              </h2>
             </span>
-            <h2 className="text-gray-400 p-3">
-              {brandConvertToPersian(item.name)}
+            <h2 className="my-auto mx-3 text-gray-400 md:text-md">
+              {item.name}
             </h2>
           </div>
         ))}
